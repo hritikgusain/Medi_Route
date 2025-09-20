@@ -1,0 +1,136 @@
+[
+    {
+      "Hospital Name": "Max Super Specialty Hospital",
+      "Address": "Mussoorie Diversion Road, Dehradun, Uttarakhand, 248001",
+      "Specialties": "Radiology, Cardiac Care, Gynecology, Obstetrics, Dentistry",
+      "Latitude": 30.373412149264805,
+      "Longitude": 78.07449534740245
+    },
+    {
+      "Hospital Name": "Kailash Hospital",
+      "Address": "Main Haridwar Road, Near Jogiwala Chowk, Dehradun, Uttarakhand, 248001",
+      "Specialties": "Multispecialty",
+      "Latitude": 30.288515796924038,
+      "Longitude": 78.0642116847665
+    },
+    {
+      "Hospital Name": "Healing Touch Hospital",
+      "Address": "Sahastradhara Crossing, Sahastradhara Road, Dehradun, Uttarakhand, 248001",
+      "Specialties": "Bone and Joint Specialist, Orthopedic",
+      "Latitude": 30.328889821372524,
+      "Longitude": 78.06596061942564
+    },
+    {
+      "Hospital Name": "Velmed Hospital",
+      "Address": "81/2 Turner Road, Clement Town, Dehradun, Uttarakhand, 248002",
+      "Specialties": "Multispecialty",
+      "Latitude": 30.2723400259508,
+      "Longitude": 78.00782124058806
+    },
+    {
+      "Hospital Name": "Surya Hospital",
+      "Address": "Haridwar Bypass Road (Near Railway Crossing), Dehradun, Uttarakhand, 248001",
+      "Specialties": "Multispecialty (Neonatal to Geriatric care)",
+      "Latitude": 30.29107712050568,
+      "Longitude": 78.04985763873984
+    },
+    {
+      "Hospital Name": "Kanishk Hospital",
+      "Address": "I.S.B.T Road, Main, Haridwar Bypass Rd, Dehradun, Uttarakhand, 248001",
+      "Specialties": "Surgical and Super Specialty",
+      "Latitude": 30.291837503124146,
+      "Longitude": 78.05071185223325
+    },
+    {
+      "Hospital Name": "Deen Dayal Upadhyaya (Coronation) Hospital",
+      "Address": "Curzon Road, Dalanwala, Dehradun, Uttarakhand, 248001",
+      "Specialties": "General Medicine and Surgery",
+      "Latitude": 30.320880038805583,
+      "Longitude": 78.0573733233987
+    },
+    {
+      "Hospital Name": "Fortis Escorts Hospital",
+      "Address": "2nd Floor, Coronation Hospital, Curzon Road, Dalanwala, Dehradun, Uttarakhand, 248001",
+      "Specialties": "Cardiac Care",
+      "Latitude": 30.425783800737474,
+      "Longitude": 77.99908454377753
+    },
+    {
+      "Hospital Name": "Combined Medical Institute (CMI) Hospital",
+      "Address": "54, Haridwar Road, East Rest Camp, Guru Nanak Vihar, Race Course, Dehradun, Uttarakhand, 248001",
+      "Specialties": "Trauma & Emergency, Neurosurgery",
+      "Latitude": 30.323842333631383,
+      "Longitude": 78.04659317191833
+    },
+    {
+      "Hospital Name": "Doon Hospital",
+      "Address": "New Road, Race Course, Dehradun, Uttarakhand, 248001",
+      "Specialties": "Government Hospital, General Medicine",
+      "Latitude": 30.321333978008095,
+      "Longitude": 78.04189310615709
+    },
+    {
+      "Hospital Name": "Synergy Institute of Medical Sciences",
+      "Address": "Balliwala Chowk, Sahastradhara Road, Dehradun, Uttarakhand",
+      "Specialties": "Cardiology, Neurology, Oncology",
+      "Latitude": 30.337848105336345,
+      "Longitude": 78.01381590261839
+    },
+    {
+      "Hospital Name": "Shri Mahant Indiresh Hospital",
+      "Address": "Kedarpur Village Road, Industrial Area, Patel Nagar, Dehradun, Uttarakhand, 248001",
+      "Specialties": "Cardiology, Nephrology, General Surgery",
+      "Latitude": 30.30476061895018,
+      "Longitude": 78.02081342524701
+    },
+    {
+      "Hospital Name": "Shri Guru Ram Rai Institute of Medical & Health Sciences",
+      "Address": "Subhash Road, Dehradun, Uttarakhand",
+      "Specialties": "Teaching Hospital, General Medicine",
+      "Latitude": 30.303076848528963,
+      "Longitude": 78.02154321175358
+    },
+    {
+      "Hospital Name": "Jaya Siddhartha Hospital",
+      "Address": "Siddhartha Law College, Dobachi Road, near IT Park, Govind Vihar, Dehradun, Danda Khudanewala, Uttarakhand 248001",
+      "Specialties": "Multispecialty",
+      "Latitude": 30.35750311983861,
+      "Longitude": 78.09462246942671
+    },
+    {
+      "Hospital Name": "Sanjivini Hospital",
+      "Address": "Araghar, Dehradun, Uttarakhand",
+      "Specialties": "Gynecology, Pediatrics, Emergency Care",
+      "Latitude": 30.32884112468924,
+      "Longitude": 78.00376024736626
+    },
+    {
+      "Hospital Name": "Apollo Clinic",
+      "Address": "Jakhan, Rajpur Road, Dehradun, Uttarakhand",
+      "Specialties": "Diagnostic Center, General Medicine",
+      "Latitude": 30.339870776951663,
+      "Longitude": 78.02706925200634
+    },
+    {
+      "Hospital Name": "Om Hospital",
+      "Address": "Prem Nagar, Dehradun, Uttarakhand",
+      "Specialties": "General Medicine & Surgery",
+      "Latitude": 30.323687316787083,
+      "Longitude": 78.01401556757665
+    },
+    {
+      "Hospital Name": "Metro Hospital",
+      "Address": "Vikas Nagar, Dehradun, Uttarakhand",
+      "Specialties": "Trauma, Neurology, Orthopedics",
+      "Latitude": 30.039229072743606,
+      "Longitude": 78.05796492735145
+    },
+    {
+      "Hospital Name": "Nanda Hospital",
+      "Address": "79, Rajpur Rd, Kandholi, Hathibarkala Salwala, Dehradun, Uttarakhand 248001",
+      "Specialties":"Cardiology, Neurology, Oncology",
+      "Latitude": 30.33787477675136,
+      "Longitude": 78.05514023684154
+    }
+  ]
+  

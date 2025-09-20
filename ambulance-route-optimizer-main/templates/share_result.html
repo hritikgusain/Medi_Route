@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shared Nearest Hospital</title>
+</head>
+<body>
+    <h2>Nearest Hospital from Shared Location</h2>
+    <p><strong>Hospital:</strong> {{ nearest }}</p>
+    <p><strong>Total Distance:</strong> {{ distance }} km</p>
+    <p><strong>Route:</strong></p>
+    <ul>
+        {% for coord in route %}
+            <li>{{ coord }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Medi Route</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+<!-- Leaflet Routing Machine CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+<!-- Leaflet Routing Machine JS -->
+<script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
+
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">🚑 Medi Route </div>
+    <nav>
+      <a href="{{ url_for('front') }}">Home</a>
+      
+      <a href="javascript:void(0);" onclick="togglePopup()">Contact</a>
+      <a href="javascript:void(0);" onclick="openShareLocationPopup()">Share My Location</a>
+    </nav>
+  </header>
+
+  <!-- Intro Section -->
+  <section class="intro">
+    <div class="intro-text slide-up">
+      <h1>Medi Route </h1>
+      <p>Instantly locate nearby hospitals with real-time mapping and geolocation tracking.</p>
+    </div>
+
+    <!-- Feature Cards with Icons -->
+    <div class="features slide-fade">
+      <div class="feature-card">
+        <img src="{{ url_for('static', filename='images/map.png') }}" alt="Map Icon" />
+        <h4>Live Map</h4>
+        <div class="feature">
+          <div class="card">
+            <label for="hospital-select">Select Hospital:</label>
+            <select id="hospital-select">
+              <option value="" disabled selected>Select a Hospital</option>
+              <!-- hospital names -->
+              <option value="Max Super Specialty Hospital">Max Super Specialty Hospital</option>
+              <option value="Kailash Hospital">Kailash Hospital</option>
+              <option value="Healing Touch Hospital">Healing Touch Hospital</option>
+              <option value="Velmed Hospital">Velmed Hospital</option>
+              <option value="Surya Hospital">Surya Hospital</option>
+              <option value="Kanishk Hospital">Kanishk Hospital</option>
+              <option value="Deen Dayal Upadhyaya (Coronation) Hospital">Deen Dayal Upadhyaya (Coronation) Hospital</option>
+              <option value="Fortis Escorts Hospital">Fortis Escorts Hospital</option>
+              <option value="Combined Medical Institute (CMI) Hospital">Combined Medical Institute (CMI) Hospital</option>
+              <option value="Doon Hospital">Doon Hospital</option>
+              <option value="Synergy Institute of Medical Sciences">Synergy Institute of Medical Sciences</option>
+              <option value="Shri Mahant Indiresh Hospital">Shri Mahant Indiresh Hospital</option>
+              <option value="Shri Guru Ram Rai Institute of Medical & Health Sciences">Shri Guru Ram Rai Institute of Medical & Health Sciences</option>
+              <option value="Jaya Siddhartha Hospital">Jaya Siddhartha Hospital</option>
+              <option value="Sanjivini Hospital">Sanjivini Hospital</option>
+              <option value="Apollo Clinic">Apollo Clinic</option>
+              <option value="Om Hospital">Om Hospital</option>
+              <option value="Metro Hospital">Metro Hospital</option>
+              <option value="Nanda Hospital">Nanda Hospital</option>
+            </select>
+          
+            <button class="routeToSelectedBtn">Route to Selected Hospital</button>
+            
+          </div>
+        </div>
+      </div>
+      <div class="feature-card">
+        <img src="{{ url_for('static', filename='images/placeholder.png') }}" alt="Hospital Icon"/>
+        <button class="findRouteBtn">Nearest Hospital</button>
+        <p>Find the nearest hospital based on your location.</p>
+      </div>
+      <!-- Add this section below the existing feature cards -->
+<div class="feature-card">
+  <img src="{{ url_for('static', filename='images/location.png') }}" alt="Location Icon"/>
+  <h4>Third Party Routing</h4>
+  <div class="feature">
+    <div class="card">
+      <label for="start-location">Start Location (Address or Coordinates):</label>
+      <input type="text" id="start-location" placeholder="e.g., 28.7041,77.1025 or Connaught Place">
+      <label for="end-hospital-select">Select Hospital:</label>
+      <select id="end-hospital-select">
+        <option value="" disabled selected>Select a Hospital</option>
+
+      </select>
+      <button class="thirdPartyRouteBtn">Calculate Route</button>
+    </div>
+  </div>
+</div>
+
+<div class="popup-overlay" id="shareLocationPopup">
+  <div class="popup">
+    <span class="close-btn" onclick="closeShareLocationPopup()">&times;</span>
+    <h2>Share Your Location</h2>
+    <p>Click the button below to share your current location with the app.</p>
+    <button id="shareLocationBtn">Share My Location</button>
+    <div id="locationResult"></div>
+    <div class="location-link">
+      <p>Or share this link with someone who needs to find you:</p>
+      <input type="text" id="locationLink" readonly>
+      <button onclick="copyLocationLink()">Copy Link</button>
+    </div>
+  </div>
+</div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <div class="main-content">
+    <div class="container">
+      <!-- Map Controls -->
+      <div class="map-controls">
+        <h2>Route</h2>
+      </div>
+
+      <!-- Map Display -->
+      <div class="map-display">
+        <div id="map" class="map-placeholder"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer  -->
+  <div class="footer">
+    <div class="contact-details">
+      <p>&copy; 2025 Route optimizer. All rights reserved</p>
+      <a href="javascript:void(0);" onclick="togglePopup()">Contact Info</a>
+    </div>
+  </div>
+
+  <!-- Contact Popup -->
+  <div class="popup-overlay" id="contactPopup">
+    <div class="popup">
+      <span class="close-btn" onclick="togglePopup()">&times;</span>
+      <h2>Meet Our Team</h2>
+      <div class="team">
+        <div class="member">
+          <h4>Dhruv Verma</h4>
+          <p>Email: dhruvverma01102005@gmail.com</p>
+          <p>Phone: +91 7417619955</p>
+        </div>
+        <div class="member">
+          <h4>Priyanshi Bhandari</h4>
+          <p>Email: priyanshi.bhandari7112005@gmail.com</p>
+          <p>Phone: +91 9876543211</p>
+        </div>
+        <div class="member">
+          <h4>Priyanshi Rawat</h4>
+          <p>Email: rawatpriyanshi1525@gmail.com </p>
+          <p>Phone: +91 9876543212</p>
+        </div>
+        <div class="member">
+            <h4>Prabhat Gusain</h4>
+            <p>Email: hritikgusain17@gmail.com </p>
+            <p>Phone: +91 7983345384</p>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function togglePopup() {
+      const popup = document.getElementById('contactPopup');
+      popup.style.display = popup.style.display === 'flex' ? 'none' : 'flex';
+    }
+
+    // Function to get lat/lon from URL if shared
+function getCoordsFromURL() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const lat = parseFloat(urlParams.get('lat'));
+  const lon = parseFloat(urlParams.get('lon'));
+  if (!isNaN(lat) && !isNaN(lon)) {
+    return { lat, lon };
+  }
+  return null;
+}
+
+
+    function openPopup(hospitalName) {
+      const popupOverlay = document.createElement("div");
+      popupOverlay.classList.add("popup-overlay");
+      const popup = document.createElement("div");
+      popup.classList.add("popup");
+
+      const closeBtn = document.createElement("span");
+      closeBtn.classList.add("close-btn");
+      closeBtn.innerHTML = "&times;";
+      closeBtn.onclick = () => popupOverlay.remove();
+      popup.appendChild(closeBtn);
+
+      const heading = document.createElement("h2");
+      heading.innerText = `${hospitalName} Details`;
+      popup.appendChild(heading);
+
+      const hospitalInfo = ` 
+        <div class="team">
+          <div class="member">
+            <h4>Address:</h4>
+            <p>${hospitalData[hospitalName].Address}</p>
+          </div>
+          <div class="member">
+            <h4>Specialties:</h4>
+            <p>${hospitalData[hospitalName].Specialties}</p>
+          </div>
+        </div>
+      `;
+      popup.innerHTML += hospitalInfo;
+
+      popupOverlay.appendChild(popup);
+      document.body.appendChild(popupOverlay);
+    }
+    
+    document.getElementById("hospital-select").addEventListener("change", (event) => {
+      const selectedHospital = event.target.value;
+      if (selectedHospital) {
+        openPopup(selectedHospital);
+      }
+    });
+
+    // Event listener for nearest hospital button
+    document.querySelector(".findRouteBtn").addEventListener("click", () => {
+    });
+  </script>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

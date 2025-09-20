@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Medi Route</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='front.css') }}">
+  
+</head>
+<body>
+  <div class="main-content">
+    <div class="container">
+      <header>
+        <div class="logo">LOGO</div>
+        <nav>
+          <a href="#">Map</a>
+          <a href="https://dehradun.nic.in/">More Info</a>
+          <a href="#" onclick="togglePopup()">Contact us</a>
+        </nav>
+      </header>
+
+      <main class="hero-section">
+        <div class="hero-text">
+          <h1>Medi Route</h1>
+          <p>Every second matters in an emergency. Our service ensures quick, reliable ambulance support when you need it most.</p>
+          <ul>
+            <li>24/7 emergency response with real-time tracking.</li>
+            <li>Trusted care, faster access, and seamless coordination.</li>
+          </ul>
+          <a href="{{ url_for('index') }}">
+            <button>Get Started</button>
+          </a>
+          
+        </div>
+        <div class="hero-image">
+          <img src="{{ url_for('static', filename='images/ll.jpg') }}" alt="Map Icon" />
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="contact-details">
+      <p>&copy; 2025 Route optimizer. All rights reserved</p>
+      <a href="javascript:void(0);" onclick="togglePopup()">Contact Info</a>
+    </div>
+  </div>
+
+
+  <!-- Contact Pop-up -->
+  <div class="popup-overlay" id="contactPopup">
+    <div class="popup">
+      <span class="close-btn" onclick="togglePopup()">&times;</span>
+      <h2>Meet Our Team</h2>
+      <div class="team">
+        <div class="member">
+          <h4>Dhruv Verma</h4>
+          <p>Email: dhruvverma01102005@gmail.com</p>
+          <p>Phone: +91 7417619955</p>
+        </div>
+        <div class="member">
+          <h4>Priyanshi Bhandari</h4>
+          <p>Email: priyanshi.bhandari7112005@gmail.com</p>
+          <p>Phone: +91 9876543211</p>
+        </div>
+        <div class="member">
+          <h4>Priyanshi Rawat</h4>
+          <p>Email: rawatpriyanshi1525@gmail.com </p>
+          <p>Phone: +91 9876543212</p>
+        </div>
+        <div class="member">
+            <h4>Prabhat Gusain</h4>
+            <p>Email: hritikgusain17@gmail.com </p>
+            <p>Phone: +91 7983345384</p>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function togglePopup() {
+      const popup = document.getElementById("contactPopup");
+      popup.style.display = popup.style.display === "flex" ? "none" : "flex";
+    }
+  </script>
+</body>
+</html>
